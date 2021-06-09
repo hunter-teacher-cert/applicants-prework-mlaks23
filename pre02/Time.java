@@ -5,7 +5,10 @@ public class Time {
     int hour = 22;
     int minute = 11;
     int second = 45;
-    int beginTime = 21 * 60 * 60 + 32 * 60 + 45;
+    final int MIN_PER_HOUR = 60;
+    final int SEC_PER_MIN = 60;
+    int beginTime = 21 * MIN_PER_HOUR * SEC_PER_MIN + 32 * SEC_PER_MIN + 45;
+    int timeElapsed = hour * MIN_PER_HOUR * SEC_PER_MIN + minute * SEC_PER_MIN + 45 - beginTime;
     //int sinceMidnight = hour * 60 * 60 + minute * 60 + second;
 
 //I started writng the program at 21:32:45.
@@ -19,8 +22,12 @@ public class Time {
     System.out.println(".");
 
     System.out.print("Time elapsed since I began working on this program: ");
-    System.out.print(hour * 60 * 60 + minute * 60 + 45 - beginTime);
+    System.out.println(timeElapsed);
     System.out.println(" seconds ");
+
+    System.out.print("I have been working for ");
+    System.out.print(timeElapsed / SEC_PER_MIN);
+    System.out.println(" minutes.");
 
 
     //System.out.print("Number of seconds since midnight: ");
