@@ -3,13 +3,10 @@ import java.util.Scanner;
 public class Ackermann {
   public static int Ack (int m, int n) {
     if (m == 0) {
-        System.out.println(n + 1);
         return (n + 1);
     } else if (m > 0 && n == 0) {
-        System.out.println((m - 1) + ", 1");
         return Ack((m - 1), 1);
     } else if (m > 0 && n > 0);
-        System.out.println((m - 1) + "," + Ack(m, (n - 1)));
         return Ack((m - 1), Ack(m, (n - 1)));
   }
 public static void main (String[] args) {
@@ -19,5 +16,6 @@ public static void main (String[] args) {
   System.out.print("Enter a number n: ");
   int n = in.nextInt();
   Ack(m, n);
+  System.out.println(Ack(m,n));
 }
 }
